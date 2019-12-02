@@ -1,13 +1,11 @@
-import { mongo } from 'mongoose';
-
 //u, profilePic, country FALTA
-
+const { appConfig } = require('../config/config');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-let accountSchema = new Schema({
-    userName: {
+const accountSchema = new Schema({
+    username: {
         type: String,
         required: true
     },
@@ -25,11 +23,20 @@ let accountSchema = new Schema({
     },
     email: {
         type: String,
+        unique: true,
+        // match: regularExpression ,
         required: true
     },
+    profilePic: {
+        type: String,
+        required: true
+    }
 },
 {
-    collection: "userAccount"
+    versionKey: false // set to false then it wont create in mongodb
+},
+{
+    collection: "users"
 });
 
-module.export = mongoose.model('userAccount', accountSchema);
+module.exports = mongoose.model('users', accountSchema);

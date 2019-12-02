@@ -54,3 +54,21 @@ OPCION B, transformar el metodo a arrow function
 methodName = () => {
   
 }
+
+
+
+//archivos estaticos
+en el server le marco a expreess la ruta que defino como estatica
+le digo que a la ubicacion public  sirva los archivos estaticos que estna en storage/imgs
+
+en el model agrego un metood para obtener la imagen
+
+
+///// Token
+
+creo una cuenta, a la cual controlo que no existe usuario, encripto pass y 
+guardo en base de datos
+
+cuando se loguea, creo un token y se lo envio al user/front
+
+necesito un middleware que controle cada vez que navega el user, que tenga un token valido
