@@ -29,7 +29,7 @@ const accountSchema = new Schema({
     },
     profilePic: {
         type: String,
-        required: true
+        required: false
     }
 },
 {

@@ -1,0 +1,412 @@
+[
+  {
+    "title": "Up to Antics",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "BoozyBabeXOXO",
+    "rating": "1.8",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Theatre #BeerGarden #Barcelona"
+  },
+  {
+    "title": "Wine & Cava with no Palaver",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "Wine&DineGuy",
+    "rating": "3.5",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Winetasting #Cavatour #Catalunya"
+  },
+  {
+    "title": "Pablo Picasso in 4 Hours",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "LiveforArt71",
+    "rating": "4.9",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Picasso #Gotico #Els4Gats"
+  },
+  {
+    "title": "Family Fun at Costa Dorada PortAventura Theme Park",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "familyfunforever44",
+    "rating": "3.3",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#familyfun #Portaventura #Barcelona"
+  },
+  {
+    "title": "Gaudi In A Day",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "GaudiLover",
+    "rating": "4.67",
+    "duration": "12",
+    "price": "$$",
+    "hashtag": "#Gaudi #Architecture #Barcelona"
+  },
+  {
+    "title": "Outside the City (Montserrat)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "Lady_Like_to_Hike",
+    "rating": "4.7",
+    "duration": "12",
+    "price": "$",
+    "hashtag": "#Hiking #Montserat #Barcelona"
+  },
+  {
+    "title": "Luxury Shopping tour",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "AfifAmjad786",
+    "rating": "1.2",
+    "duration": "12",
+    "price": "$$$$",
+    "hashtag": "#PasseigdeGracia #Shoptillyoudrop #Barcelona"
+  },
+  {
+    "title": "Graffiti Galore",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "el.dodger.astuto.",
+    "rating": "3.8",
+    "duration": "11.5",
+    "price": "$",
+    "hashtag": "#Graffitti #Hiddenart #Barclona"
+  },
+  {
+    "title": "Visca al Barca!",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "FatherofFootball",
+    "rating": "4.2",
+    "duration": "12",
+    "price": "$$$$",
+    "hashtag": "#CampNou #Football #FCBarcelona"
+  },
+  {
+    "title": "Placa's Plus Cocktails",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "BoozyBabeXOXO",
+    "rating": "1.8",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Cocktails #Placa's #Barcelona"
+  },
+  {
+    "title": "Tappa till you droppa",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "hambrealumna",
+    "rating": "1",
+    "duration": "12",
+    "price": "$",
+    "hashtag": "#Tappas #Studentlife #Cheaptoeat"
+  },
+  {
+    "title": "Barcelona Art History Tour",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "LiveforArt71",
+    "rating": "4.9",
+    "duration": "12",
+    "price": "$$",
+    "hashtag": "#Winetasting #Cavatour #Catalunya"
+  },
+  {
+    "title": "Rooftop Mania",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "Lazarenko1996",
+    "rating": "2.2",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#RooftopParties #Sangria #Barcelona"
+  },
+  {
+    "title": "Costa-less Brava (Day 1)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "BasedinBCN",
+    "rating": "2.5",
+    "duration": "12",
+    "price": "$$",
+    "hashtag": "#CostaBrava #Weekendaway #Barcelona"
+  },
+  {
+    "title": "Costa-less Brava (Day 2)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "BasedinBCN",
+    "rating": "2.5",
+    "duration": "12",
+    "price": "$$",
+    "hashtag": "#CostaBrava #Weekendaway #Barcelona"
+  },
+  {
+    "title": "Down by the Sea-tges (Day 1)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "miss.tastytraveller",
+    "rating": "3.98",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Sitges #Weekendaway #Barcelona"
+  },
+  {
+    "title": "Down by the Sea-tges (Day 2)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "username": "miss.tastytraveller",
+    "rating": "3.98",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Sitges #Weekendaway #Barcelona"
+  },
+  {
+    "title": "Brandenburg Blitz",
+    "city": "Berlin",
+    "country": "Germany",
+    "username": "MüllerMan25",
+    "rating": "2.7",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#History #Berlin #Holiday"
+  },
+  {
+    "title": "Berlin Wall Tour",
+    "city": "Berlin",
+    "country": "Germany",
+    "username": "Talking-travellers",
+    "rating": "3.5",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#History #Berlinwall #MYtin"
+  },
+  {
+    "title": "Nemo Science Museum Trip",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "username": "familyfunforever44",
+    "rating": "3.3",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Sciencemuseum #familyfun #Berlin"
+  },
+  {
+    "title": "A day in the Dam",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "username": "Amster-dame53",
+    "rating": "4.2",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#IAmsterdam #Canals #MYtin"
+  },
+  {
+    "title": "My Dam Holiday (Day 1)",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "username": "Amster-dame53",
+    "rating": "4.2",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Amsterdam #2DayHoliday #MYtin"
+  },
+  {
+    "title": "My Dam Holiday (Day 2)",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "username": "Amster-dame53",
+    "rating": "4.2",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Amsterdam #2DayHoliday #MYtin"
+  },
+  {
+    "title": "Belém Tower in 4 Hours",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "username": "LisbonLady2000",
+    "rating": "0.8",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Lisbon #MYtin #Landmarks"
+  },
+  {
+    "title": "A short time with Lisbon wine",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "username": "Wine&DineGuy",
+    "rating": "3.5",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Lisbon #Wine&Dine #MYtin"
+  },
+  {
+    "title": "Eiffel Tower Trip",
+    "city": "Paris",
+    "country": "France",
+    "username": "Alex45",
+    "rating": "1.23",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Eiffel Tower #Paris #Holiday"
+  },
+  {
+    "title": "I'd love me some Louvre",
+    "city": "Paris",
+    "country": "France",
+    "username": "OntheGo247",
+    "rating": "0.5",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Louvre #Paris #Art"
+  },
+  {
+    "title": "Paris without wine is not fine.",
+    "city": "Paris",
+    "country": "France",
+    "username": "Wine&DineGuy",
+    "rating": "3.5",
+    "duration": "12",
+    "price": "$$$$",
+    "hashtag": "#Paris #Wine&Dine #MYtin"
+  },
+  {
+    "title": "Lass on the lash",
+    "city": "Dublin",
+    "country": "Ireland",
+    "username": "BoozyBabeXOXO",
+    "rating": "1.8",
+    "duration": "4",
+    "price": "$$$",
+    "hashtag": "#Booze #Ireland #Pubs"
+  },
+  {
+    "title": "A day in Dublin",
+    "city": "Dublin",
+    "country": "Ireland",
+    "username": "OntheGo247",
+    "rating": "0.9",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Dublin #Daytrip #MYtin"
+  },
+  {
+    "title": "Hungry for Hungarian Art",
+    "city": "Budapest",
+    "country": "Hungary",
+    "username": "LiveforArt71",
+    "rating": "4.9",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Budapest #Art #Gallery"
+  },
+  {
+    "title": "Along Antall Jozsef",
+    "city": "Budapest",
+    "country": "Hungary",
+    "username": "HungarianGirl21",
+    "rating": "3.67",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Architecture #Budapest #MYtin"
+  },
+  {
+    "title": "Hungarian wine is simply divine",
+    "city": "Budapest",
+    "country": "Hungary",
+    "username": "Wine&DineGuy",
+    "rating": "3.5",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#Budapest #Wine&Dine #MYtin"
+  },
+  {
+    "title": "Medievil Mayhem",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "username": "OntheGo247",
+    "rating": "0.9",
+    "duration": "4",
+    "price": "$",
+    "hashtag": "#Prague #Medievilmayhem #MYtin"
+  },
+  {
+    "title": "4 Hours in Prague",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "username": "RedHairedRoamer",
+    "rating": "3.71",
+    "duration": "3.5",
+    "price": "$",
+    "hashtag": "#Prague #daytrip #citywalk"
+  },
+  {
+    "title": "Hala Madrid!",
+    "city": "Madrid",
+    "country": "Spain",
+    "username": "FatherofFootball",
+    "rating": "4.2",
+    "duration": "4",
+    "price": "$$$$",
+    "hashtag": "#RealMadrid #Football #Familyouting"
+  },
+  {
+    "title": "Perpetually in Prague",
+    "city": "Madrid",
+    "country": "Spain",
+    "username": "miss.tastytraveller",
+    "rating": "3.98",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Foody #Madrid #Museums"
+  },
+  {
+    "title": "Holy Rome-ing",
+    "city": "Rome",
+    "country": "Italy",
+    "username": "Nino.Giovanni.88",
+    "rating": "2.13",
+    "duration": "4",
+    "price": "$$",
+    "hashtag": "#Holyrome #Vatican #Italy"
+  },
+  {
+    "title": "OntheRome247",
+    "city": "Rome",
+    "country": "Italy",
+    "username": "OntheGo247",
+    "rating": "0.9",
+    "duration": "3.5",
+    "price": "$",
+    "hashtag": "#Rome #Architecture #MYtin"
+  },
+  {
+    "title": "When in Rome (Day 1)",
+    "city": "Rome",
+    "country": "Italy",
+    "username": "LiveforArt71",
+    "rating": "4.9",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#WheninRome #2daytrip #Italy"
+  },
+  {
+    "title": "When in Rome (Day 2)",
+    "city": "Rome",
+    "country": "Italy",
+    "username": "LiveforArt71",
+    "rating": "4.9",
+    "duration": "12",
+    "price": "$$$",
+    "hashtag": "#WheninRome #2daytrip #Italy"
+  }
+]

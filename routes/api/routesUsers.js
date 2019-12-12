@@ -6,6 +6,13 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport')
 const jwt = require('jsonwebtoken');
 const key = require('../../config/config').secretOrKey
+const checkAuth = require('../../passport/check-out');
+const googleAuth = require('../../passport/google-auth');
+const url = require('url');
+require('../../passport/jwt');
+
+const UserServices = require('../../services/userServices');
+const userServices = new UserServices();
 
 const multer  = require('multer')
 const storage = multer.diskStorage({
@@ -38,125 +45,71 @@ const public = multer({ storage: storage })  //Esto especifica una ruta donde mu
       );
 
 
-router.get('/getUser', (req, res) => {
-    modelUser
-        .find()
-        .then( user => res.json(user) )
-})
+var JwtStrategy = require('passport-jwt').Strategy,
+ExtractJwt = require('passport-jwt').ExtractJwt;
+var opts = {}
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = 'secret';
+// opts.issuer = 'accounts.examplesoft.com';
+// opts.audience = 'yoursite.net';
+router.get('/identifyuser', 
+            passport.authenticate('jwt', {session:false}),
+            async (req, res) => {
+                console.log(req.user);
+                // const idUser = req.user._id;
+                // const user = await userService.getUserById(idUser);
+                res.status(200).json({
+                    data: req.user,
+                    message: 'exito'
+                });
+              }
+);
 
 //CREA CUENTA USUARIO
 router.post(
         '/signup', 
-        passport.authenticate("jwt", { session: false }),
+        // passport.authenticate("jwt", { session: false }),
         public.single('profilePic'), 
         (req, res) => { 
-            //CONTROLO QUE EL USUARIO NO EXISTA YA
-            modelUser
-                .find({
-                    email: req.body.email// BUSCO LO QUE NO SE PUEDE REPETIR DNI EMAIL POR EJEMPLO
-                })
-                .exec()
-                .then( user => { 
-                    //SI EXISTE AVISO
-                    if (user.length >= 1 ) {  //409 significa que se puede manejar la request pero hay conflicto
-                        return res.status(409).json({
-                            message: 'Mail exists'
-                        });
-                        //SINO LO CREO
-                    } else {
-                        //ENCRIPTO LA CONTRASENA PARA GUARDARLA EN BD    
-                        bcrypt.hash(req.body.password, 10, (err, hash) => {
-                            if (err) {
-                                return res.status(500).json({
-                                    error: err
-                                })
-                            } else { 
-                                //CREO OBJETO USUARIO PARA LA BD
-                                const user = new modelUser({
-                                    firstName : req.body.firstName,
-                                    lastName : req.body.lastName,
-                                    username : req.body.username,
-                                    password : hash,
-                                    email : req.body.email,
-                                    profilePic : req.file.path
-                                });
-                                user
-                                    //LO GUARDO EN LA BD CON SU PASS ENCRIPTADA
-                                    .save()
-                                    .then( res => {
-                                        res.status(201).json({
-                                            message: 'user created'
-                                        })
-                                        res.redirect('/');  //CONTROLAAAAAAAAAAAAAAAAAAA ESTO
-                                    })
-                                    .catch( err => {
-                                        res.status(500).json({
-                                            error: err
-                                        })
-                                    })
-                            }
-                        })
-                    }
-                })
+            const userServices = new UserServices();
+            const pUser = {
+                firstName : req.body.firstName,
+                lastName : req.body.lastName,
+                username : req.body.username,
+                password : req.body.password,
+                email : req.body.email,
+                profilePic : req.file.path
+            };
+            res.json ( userServices.newUser(pUser) );
         }
 )
 
 //STEP 2 DE SPRINT 4
 //CONTROLA SI EXISTE USUARIO Y CREA UN TOKEN 
-router.post('/login', (req, res) => { 
-    modelUser  
-        .find({
-            email: req.body.email
-        })
-        .exec()
-        .then( user => { 
-            if ( user.length < 1) {
-                return res.status(401).json({
-                    message: "Auth failed"
-                })
-            } else { 
-                //COMPARO LA CONTRASENA USADA PARA LOGUEARSE
-                bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-                    if (err) { 
-                        return res.status(401).json({
-                            message: "Auth failed"
-                        })
-                    }
-                    if (result) {
-                        //SI LOS DATOS SON CORECTOS CREO TOKEN
-                        const token = jwt.sign(
-                        //ACA PONER EL PAYLOAD
-                        {
-                            email: user[0]._id,
-                            profilePic: user[0].profilePic
-                        }, 
-                        //ACA PONER LA KEY
-                        key,//ACA PONER ALGO SECRETO ENV AAAAAAAAAAAAAAAAAA
-                        //OPCIONES : TIEMPO EN QUE EXPIRA
-                        {
-                            expiresIn: "1h"
-                        }
-                        ); 
-                        //RETORNO AL FRONT EL TOKEN
-                        return res.status(200).json({
-                            message: "Auth successful",
-                            token : token,
-                        })
-                    }
-                    res.status(401).json({
-                        message: "Auth failed"
-                    }) 
-                })
-            }
-        })
-        .catch( err => {
-            res.status(500).json({
-                error: err
-            })
-        })
+router.post('/login', async (req, res) => { 
+    const pUser = {
+        email: req.body.email,
+        password: req.body.password
+    }
+    const token = await userServices.login(pUser);
+    // res.redirect(`http://localhost:3000/${token}`);
 })
 
-router.delete('/:userId', (req, res) => {
+//AUTH con google
+router.get('/loginGoogle',
+  passport.authenticate('google', { scope: ["profile", "email"] }));
+
+router.get('/loginGoogleRedirect', 
+    passport.authenticate('google', { failureRedirect: '/login', session: false }),
+    async function(req, res) { //EN ESTE REQ RECIBO EL MAIL Y PASSWORD
+        // return 
+        const token = await userServices.loginService(req.user);    
+        res.redirect(`http://localhost:3000/loaduser/${token}`);
+        // return res.status(200).json(payload);
+    }
+)
+
+router.delete('/:userId', checkAuth, (req, res) => {
     modelUser
         .remove({_id : req.params.userId})
         .exec()

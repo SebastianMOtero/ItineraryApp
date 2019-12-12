@@ -17,9 +17,9 @@ opts.secretOrKey = process.env.JWT_KEY;
 
 //EXPORTO LA ESTRATEGIA
 module.exports = passport.use(
-    new JwtStrategy(opts, (jwt_payload, done) => {
+    new JwtStrategy(opts, (jwt_payload, done) => { 
         modelUser
-            .findOne(jwt_payload.sub)
+            .findById(jwt_payload.id)
             .then( user => {
                 if (user) {
                     return done(null, user);
@@ -29,18 +29,3 @@ module.exports = passport.use(
             .catch(err => console.log(err));
     })
   );
-// const localStrategy = require('passport-local').Strategy;
-
-//Nombre del metodo de autenticacion y le paso la nueva estrategia
-// passport.use('local-signup', new localStrategy({
-//         //la nueva etrategia recibe un objeto y un callback
-//         //el objeto indica que tipo de dato recibimos del cliente
-//         usernameField: 'username', //ponemos nombre del formulario },
-//         passwordField: 'password',
-//         passReqToCallback: true
-//     },
-//     //el callback para decirle que hace con esos datos, validar, almacenar o que
-//     (req, email, password, done) => {
-
-//     }
-// ));
