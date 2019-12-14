@@ -2,15 +2,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const itinerarySchema = new Schema({
-    title: {
+    mytineraryName: {
         type: String,
         required: true
     },
-    profilePic: {
+    userPhoto: {
         type: String,
-        required: true
+        required: false
     },
-    profileName: {
+    username: {
         type: String,
         required: true
     },

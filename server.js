@@ -25,7 +25,8 @@ app.use(cors());
 app.use(passport.initialize());
 
 //Rutas usadas, las asocio 
-app.use('/cities', checkAuth, routesCities);
+// app.use('/cities', checkAuth, routesCities);
+app.use('/cities', routesCities);
 app.use('/itineraries', routesItineraries);
 app.use('/users', routesUsers);
 app.use('/activities', routesActivities);

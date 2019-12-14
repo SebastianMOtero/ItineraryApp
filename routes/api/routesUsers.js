@@ -92,6 +92,9 @@ router.post('/login', async (req, res) => {
         password: req.body.password
     }
     const token = await userServices.login(pUser);
+    res.status(200).json({
+        token: token
+    })
     // res.redirect(`http://localhost:3000/${token}`);
 })
 

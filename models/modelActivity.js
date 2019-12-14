@@ -15,7 +15,7 @@ const activitySchema = new Schema ({
     },
     photo: {
         type: String,
-        required: true
+        required: false
     },
     time: {
         type: Number,
