@@ -11,6 +11,7 @@ const routesCities = require('./routes/api/routesCities');
 const routesItineraries = require('./routes/api/routesItineraries');
 const routesUsers = require('./routes/api/routesUsers');
 const routesActivities = require('./routes/api/routesActivities');
+const routesComments = require('./routes/api/routesComments');
 env(__dirname + '/.env');
 
 const app = express();
@@ -30,6 +31,7 @@ app.use('/cities', routesCities);
 app.use('/itineraries', routesItineraries);
 app.use('/users', routesUsers);
 app.use('/activities', routesActivities);
+app.use('/comments', routesComments);
 
 const port = process.env.port || 5000;
 app.listen( port, () => console.log(`Server started on port ${port}`) );

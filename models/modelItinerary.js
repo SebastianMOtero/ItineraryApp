@@ -33,6 +33,10 @@ const itinerarySchema = new Schema({
     cityId: {
         type: mongoose.Types.ObjectId,
         required: true
+    },
+    comments: {
+        type: Array,
+        required: false //Modificar mas adelante
     }
 },
 {

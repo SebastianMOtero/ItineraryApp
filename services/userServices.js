@@ -8,7 +8,7 @@ class UserServices {
     async loginService(pUser) {
         try { console.log('ENTRO LOGIN SERVICE')
             const userExist = await User.findOne({email: pUser.email});
-            if (!userExist) {
+            if (!userExist) { console.log(pUser)
                 const newUser = await this.newUser(pUser);
                 console.log(newUser);
             }
@@ -50,7 +50,7 @@ class UserServices {
                 username : pUser.username,
                 password : hashedPassword,
                 email : pUser.email,
-                profilePic : pUser.path
+                profilePic : pUser.path || pUser.profilePic
             }); console.log('USUARIO CREADO');
             const newUser = await userCreated.save();
             return newUser;

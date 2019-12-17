@@ -30,6 +30,10 @@ const accountSchema = new Schema({
     profilePic: {
         type: String,
         required: false
+    },
+    favourites: {
+        type: Array,
+        required: false //Despues cambiar esto 
     }
 },
 {

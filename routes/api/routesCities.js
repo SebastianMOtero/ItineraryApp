@@ -5,7 +5,23 @@ const router = express.Router();
 const modelCity = require('../../models/modelCity');
 const modelItinerary = require('../../models/modelItinerary');
 
+const multer  = require('multer')
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/images/cities')
+    },
+    filename: function(req, file, cb) {
+        cb(null,  file.originalname);
+    }
+});
+const public = multer({ storage: storage })
+
 //Agregamos las rutas de cities
+router.get('/city/:cityId', (req, res) => { console.log(req.params.cityId)
+    modelCity
+        .findById(req.params.cityId)
+        .then( city => res.status(200).json(city))
+})
 
 // @route   cities/all
 // @desc:   get all the cities
@@ -31,17 +47,47 @@ router.get('/:cityId', (req, res) => {
 // @route   cities/add
 // @desc:   add a new city
 // @access: public
-router.post('/add', (req, res) => { 
-    let city = new modelCity(req.body) ;
-    city.save()
-        .then( city => res.status(200).json({'city': 'city added successfully'}) ) //cada uno que aplique lo transforma en json
-        .catch( err => res.status(400).send('adding new city failed')); 
+router.post(
+    '/add', 
+    public.single('image'),
+    async (req, res) => { 
+        try {
+            const cityExist = await modelCity.findOne({name: req.body.name});
+            if (cityExist) {
+                console.log('existe')//error si existe 
+            }
+            const cityCreated = new modelCity({
+                name: req.body.name,
+                country: req.body.country,
+                image: req.file.path
+            })
+            const newCity = await cityCreated.save(); 
+            res.status(200).json(newCity)
+        } catch (error) {
+            console.log('fallo');
+            //error si falla el proceso
+        }
 });
 
 // @route   cities/update/:id
 // @desc:   update the city
 // @access: public
-router.post('/update/:id', (req, res) => { 
+router.post(
+    '/update/:id', 
+    public.single('image'),
+    async (req, res) => { 
+    try {
+        const cityUpdated = await modelCity.findByIdAndUpdate(req.params.id, {
+            country: req.body.country,
+            image: req.file.path
+        });
+        if (cityUpdated) { console.log('existo')
+            return res.status(200).json(cityUpdated)
+        } 
+        return console.log("No se encontro")
+    } catch (error) {
+        
+    }
     modelCity
         .findById(req.params.id, (err, city) => {
             if (!city) {
