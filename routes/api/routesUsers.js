@@ -10,6 +10,7 @@ const checkAuth = require('../../passport/check-out');
 const googleAuth = require('../../passport/google-auth');
 const url = require('url');
 require('../../passport/jwt');
+var ObjectID = require('mongodb').ObjectID;
 
 const UserServices = require('../../services/userServices');
 const userServices = new UserServices();
@@ -112,7 +113,7 @@ router.get('/loginGoogleRedirect',
     }
 )
 
-router.delete('/:userId', checkAuth, (req, res) => {
+router.delete('/:userId', (req, res) => {
     modelUser
         .remove({_id : req.params.userId})
         .exec()
@@ -126,5 +127,37 @@ router.delete('/:userId', checkAuth, (req, res) => {
                 error: err
             });
         });
+})
+
+router.post('/newFavourite', async (req, res) => {
+    try { console.log('asd')
+        let itiId = `${req.body.itineraryId}`;
+        console.log(itiId)
+        let user = await modelUser.findByIdAndUpdate(req.body.id, {
+            $push: {
+                favourites: ObjectID(itiId)
+            }
+        });
+        user = await modelUser.findById(req.body.id);
+        if (user) { console.log(user)
+            return res.status(200).json(user)
+        } 
+        return console.log("No se encontro")
+    } catch (error) {
+        
+    }
+})
+
+router.post('/removeFavourite', async(req, res) => {
+    let user = await modelUser.findByIdAndUpdate(req.body.id, {
+        $pull: {
+            favourites: ObjectID(req.body.itineraryId)
+        }
+    });
+    user = await modelUser.findById(req.body.id);
+    if (user) { console.log(user)
+            return res.status(200).json(user)
+        } 
+        return console.log("No se encontro")
 })
 module.exports = router;

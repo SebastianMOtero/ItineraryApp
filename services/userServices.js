@@ -50,7 +50,8 @@ class UserServices {
                 username : pUser.username,
                 password : hashedPassword,
                 email : pUser.email,
-                profilePic : pUser.path || pUser.profilePic
+                profilePic : pUser.path || pUser.profilePic,
+                favourites: []
             }); console.log('USUARIO CREADO');
             const newUser = await userCreated.save();
             return newUser;

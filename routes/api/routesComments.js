@@ -12,7 +12,7 @@ router.post('/newComment', async (req, res) => {
             profilePic: req.body.profilePic,
             comment: req.body.comment,
             date: req.body.date
-        })
+        }); console.log(commentCreated);
         const commentSaved = await commentCreated.save();
         res.status(200).json({
             comment: commentSaved
